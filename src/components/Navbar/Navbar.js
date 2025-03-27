@@ -5,6 +5,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navbarRef = useRef(null);
   const particleContainerRef = useRef(null);
 
@@ -49,6 +50,23 @@ const Navbar = () => {
     });
   }, []);
 
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   // Scroll effect
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -87,37 +105,36 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo">
           <Logo scrollProgress={scrollProgress} />
         </Link>
-    
-                <ul className="nav-menu">
-                  <li className="nav-item">
-                    <Link to="/" className="nav-links">Home</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/about" className="nav-links">About</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/services" className="nav-links">Services</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/contact" className="nav-links">Contact</Link>
-                  </li>
-                </ul>
-              </div>
-    
+
+        {/* Mobile menu toggle */}
+        <div 
+          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Navigation menu */}
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <li className="nav-item">
+            <Link to="/" className="nav-links" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/about" className="nav-links" onClick={() => setIsMenuOpen(false)}>About</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/services" className="nav-links" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className="nav-links" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
-// Extracted menu component
-const NavMenu = () => (
-  <ul className="nav-menu">
-    {['Home', 'About', 'Services', 'Contact'].map((item) => (
-      <li key={item} className="nav-item">
-        <Link to={`/${item.toLowerCase()}`} className="nav-links">
-          {item}
-        </Link>
-      </li>
-    ))}
-  </ul>
-);
 
 export default Navbar;

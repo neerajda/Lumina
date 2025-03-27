@@ -1,40 +1,132 @@
 .footer {
-    background-color: #242424;
-    color: #ffffff;
-    padding: 4rem 0 2rem 0;
+  background-color: #242424;
+  color: #ffffff;
+  padding: 4rem 0 2rem 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.footer-links a:hover {
+  color: #4b59f7;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+  .footer {
+      padding: 3.5rem 0 1.75rem 0;
   }
   
   .footer-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      padding: 0 40px;
   }
   
   .footer-logo {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+      font-size: 1.8rem;
   }
   
   .footer-links {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+      gap: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Large mobile styles */
+  .footer {
+      padding: 3rem 0 1.5rem 0;
+  }
+  
+  .footer-container {
+      padding: 0 30px;
+  }
+  
+  .footer-logo {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+  }
+  
+  .footer-links {
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile styles */
+  .footer {
+      padding: 2.5rem 0 1.25rem 0;
+  }
+  
+  .footer-container {
+      padding: 0 20px;
+  }
+  
+  .footer-logo {
+      font-size: 1.4rem;
+  }
+  
+  .footer-links {
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
   }
   
   .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-links a:hover {
-    color: #4b59f7;
-    transition: all 0.3s ease;
+      font-size: 0.9rem;
   }
   
   .footer-copyright {
-    font-size: 0.9rem;
+      font-size: 0.8rem;
   }
+}
+
+/* For very small screens (optional) */
+@media (max-width: 320px) {
+  .footer {
+      padding: 2rem 0 1rem 0;
+  }
+  
+  .footer-links {
+      gap: 1rem;
+  }
+  
+  .footer-links a {
+      font-size: 0.85rem;
+  }
+}

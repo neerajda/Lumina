@@ -1,23 +1,52 @@
 .tech-showcase {
-    padding: 5rem 0;
-    background: #f8f9fa;
+  padding: 5rem 0;
+  background: #f8f9fa;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This ensures content stays centered */
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  width: 100%; /* Add this to ensure full width */
+}
+
+/* Mobile-specific changes */
+@media (max-width: 480px) {
+  /* Mobile */
+  .tech-showcase {
+    padding: 3rem 0;
   }
   
   .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 0 1.25rem;
+    justify-items: center; /* This centers the grid items */
+    width: 90%; /* Adjust width to prevent edge crowding */
   }
   
   .tech-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    padding: 1.5rem 1.25rem;
+    width: 100%; /* Ensure items take full width of grid column */
+    max-width: 300px; /* Optional: Set a max-width for better appearance */
+  }
+}
+
+@media (max-width: 320px) {
+  /* Small Mobile */
+  .tech-showcase {
+    padding: 2.5rem 0;
   }
   
-  .tech-item:hover {
-    transform: translateY(-5px);
+  .tech-item {
+    padding: 1.25rem 1rem;
   }
+}
