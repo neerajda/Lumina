@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Color Variables */
+  --lumina-primary: #6E45E2;
+  --lumina-secondary: #88D3CE;
+  --lumina-accent: #FF7E5F;
+  --lumina-light: #F8F9FA;
+  --lumina-dark: #212529;
+  --lumina-gray: #6C757D;
+  --lumina-gradient: linear-gradient(135deg, var(--lumina-primary) 0%, var(--lumina-secondary) 100%);
+  --lumina-accent-gradient: linear-gradient(to right, var(--lumina-accent), #FF9A5F);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--lumina-light);
+  color: var(--lumina-dark);
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 126, 95, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 126, 95, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 126, 95, 0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

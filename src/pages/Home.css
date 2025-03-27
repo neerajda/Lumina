@@ -1,0 +1,34 @@
+/* Home.css - Global Styles */
+:root {
+    --lumina-primary: #6E45E2;
+    --lumina-secondary: #88D3CE;
+    --lumina-accent: #FF7E5F;
+    --lumina-dark: #2D3748;
+    --lumina-light: #F8F9FA;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--lumina-dark);
+    background: var(--lumina-light);
+  }
+  
+  section {
+ 
+    position: relative;
+  }
+  
+  /* Gradient mesh background for tech vibe */
+  .tech-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, 
+        rgba(110, 69, 226, 0.15) 0%, 
+        transparent 40%),
+      radial-gradient(circle at 75% 75%, 
+         rgba(136, 211, 206, 0.15) 0%,  
+        transparent 40%); 
+    z-index: -1;
+  }

@@ -1,0 +1,41 @@
+/* client/src/components/Logo/Logo.css */
+@font-face {
+    font-family: 'Abyss';
+    src: url('../../assets/fonts/Abyss.woff2') format('woff2'),
+         url('../../assets/fonts/Abyss.woff') format('woff');
+    font-display: swap;
+  }
+  .tagline-part {
+    transition: color 0.3s ease;
+  }
+  .logo-text span {
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-text span:hover {
+    transform: translateY(-3px);
+  }
+  
+  .tagline-part:hover {
+    color: #88D3CE;
+  }
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo-text {
+    font-family: 'Abyss', 'Arial Black', 'Impact', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  
+  .logo-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+  

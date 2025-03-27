@@ -1,0 +1,191 @@
+
+/* Add this to Navbar.css */
+.particle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color:black
+    ;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: popOut 1s ease-out forwards;
+  }
+  
+  @keyframes popOut {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--x-move), var(--y-move)) scale(0);
+      opacity: 0;
+    }
+  }
+
+
+/* ====================== */
+/* HERO SECTION STYLES    */
+/* ====================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+ 
+}
+  
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+  
+.hero-heading {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+  
+.gradient-text {
+    background: linear-gradient(90deg, var(--lumina-primary), var(--lumina-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+  
+.ar-preview {
+    width: 100%;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, transparent 70%); 
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* ====================== */
+/* BUTTON STYLES          */
+/* ====================== */
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Base button styles */
+.cta-primary,
+.cta-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    outline: none;
+}
+
+/* Primary button (Book a Tour) */
+.cta-primary {
+    background: linear-gradient(135deg, var(--lumina-primary), var(--lumina-accent));
+    color: white;
+    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.4);
+}
+  
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.6);
+}
+  
+.cta-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary button (View Plans) */
+.cta-secondary {
+    background: transparent;
+    color: var(--lumina-dark);
+    border: 2px solid var(--lumina-dark);
+    backdrop-filter: blur(5px);
+}
+  
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--lumina-primary);
+    color: var(--lumina-primary);
+}
+
+/* ====================== */
+/* PARTICLE SYSTEM STYLES */
+/* ====================== */
+.particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+  
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: translate(var(--x), var(--y));
+    animation: 
+      particleFade 1s ease-out forwards,
+      particleMove 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+  
+@keyframes particleFade {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+  
+@keyframes particleMove {
+    100% {
+      transform: translate(
+        calc(var(--x) + var(--x-move)),
+        calc(var(--y) + var(--y-move))
+      );
+    }
+}
+  
+/* Ensure buttons are above particles */
+/* Add to Hero.css */
+.hero-visual {
+    position: relative;
+    height: 400px; /* Match your design */
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit; /* Match parent radius */
+  }
+  
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+    z-index: 1;
+  }
+  
