@@ -1,34 +1,86 @@
 /* Home.css - Global Styles */
 :root {
-    --lumina-primary: #6E45E2;
-    --lumina-secondary: #88D3CE;
-    --lumina-accent: #FF7E5F;
-    --lumina-dark: #2D3748;
-    --lumina-light: #F8F9FA;
+  --lumina-primary: #6E45E2;
+  --lumina-secondary: #88D3CE;
+  --lumina-accent: #FF7E5F;
+  --lumina-dark: #2D3748;
+  --lumina-light: #F8F9FA;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--lumina-dark);
+  background: var(--lumina-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* Gradient mesh background for tech vibe */
+.tech-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, 
+      rgba(110, 69, 226, 0.15) 0%, 
+      transparent 40%),
+    radial-gradient(circle at 75% 75%, 
+      rgba(136, 211, 206, 0.15) 0%,  
+      transparent 40%); 
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Tablet styles */
+  section {
+    padding: 0.8rem;
   }
   
+  .tech-bg::before {
+    background: 
+      radial-gradient(circle at 20% 20%, 
+        rgba(110, 69, 226, 0.15) 0%, 
+        transparent 35%),
+      radial-gradient(circle at 80% 80%, 
+        rgba(136, 211, 206, 0.15) 0%,  
+        transparent 35%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile styles */
   body {
-    font-family: 'Inter', sans-serif;
-    color: var(--lumina-dark);
-    background: var(--lumina-light);
+    font-size: 14px; /* Slightly smaller base font for mobile */
   }
   
   section {
- 
-    position: relative;
+    padding: 0.5rem;
   }
   
-  /* Gradient mesh background for tech vibe */
   .tech-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     background: 
-      radial-gradient(circle at 25% 25%, 
+      radial-gradient(circle at 15% 15%, 
         rgba(110, 69, 226, 0.15) 0%, 
-        transparent 40%),
-      radial-gradient(circle at 75% 75%, 
-         rgba(136, 211, 206, 0.15) 0%,  
-        transparent 40%); 
-    z-index: -1;
+        transparent 30%),
+      radial-gradient(circle at 85% 85%, 
+        rgba(136, 211, 206, 0.15) 0%,  
+        transparent 30%);
   }
+}
+
+/* For very large screens (optional) */
+@media (min-width: 1440px) {
+  section {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

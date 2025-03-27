@@ -1,9 +1,13 @@
 .App {
   text-align: center;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .App-logo {
   height: 40vmin;
+  max-height: 300px; /* Prevent logo from becoming too large */
+  min-height: 150px; /* Prevent logo from becoming too small */
   pointer-events: none;
 }
 
@@ -22,10 +26,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .App-link {
   color: #61dafb;
+  display: inline-block; /* Better for touch targets */
+  padding: 8px 0; /* Better touch area */
 }
 
 @keyframes App-logo-spin {
@@ -51,4 +59,47 @@
   /* Gradients */
   --lumina-gradient: linear-gradient(135deg, var(--lumina-primary) 0%, var(--lumina-secondary) 100%);
   --lumina-accent-gradient: linear-gradient(to right, var(--lumina-accent), #FF9A5F);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+  .App-logo {
+    height: 35vmin;
+  }
+  
+  .App-header {
+    font-size: calc(12px + 2vmin); /* Slightly larger base font */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Large mobile styles */
+  .App-logo {
+    height: 30vmin;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile styles */
+  .App-logo {
+    height: 25vmin;
+  }
+  
+  .App-header {
+    padding: 15px;
+    font-size: calc(10px + 3vmin); /* More responsive font scaling */
+  }
+  
+  .App-link {
+    padding: 10px 0; /* Larger touch targets for mobile */
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 320px) {
+  .App-logo {
+    height: 22vmin;
+  }
 }

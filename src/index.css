@@ -5,9 +5,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Responsive additions */
+  line-height: 1.5;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  /* Responsive additions for code blocks */
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+  body {
+    font-size: 1rem; /* Ensures consistent base size */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Large mobile styles */
+  body {
+    -webkit-text-size-adjust: none; /* Prevent iOS text inflation */
+  }
+  
+  code {
+    white-space: pre-wrap; /* Better code wrapping on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile styles */
+  body {
+    font-size: 0.9375rem; /* Slightly smaller font for mobile */
+    line-height: 1.6; /* More readable line spacing */
+  }
+  
+  code {
+    font-size: 0.875rem; /* Slightly smaller code font */
+    padding: 0.25em 0.5em; /* Better spacing */
+  }
 }

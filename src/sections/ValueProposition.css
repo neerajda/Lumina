@@ -2,42 +2,134 @@
     background: #f8f9fa;
     padding: 60px 20px;
     text-align: center;
-  }
+    box-sizing: border-box;
+}
 
-  
-   .stats-grid {
+.stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 20px; 
-  } 
-  
-  .stat-card {
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.stat-card {
     background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .stat-card:hover {
+    box-sizing: border-box;
+}
+
+.stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  .stat-icon {
+}
+
+.stat-icon {
     font-size: 2.5rem;
     color: #007bff;
     margin-bottom: 10px;
-  }
-  
-  h3 {
+}
+
+.value-prop h3 {
     font-size: 1.8rem;
     font-weight: 600;
     color: #333;
-  }
-  
-  p {
+    margin: 0 0 10px 0;
+}
+
+.value-prop p {
     font-size: 1rem;
     color: #666;
-  }
-  
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    /* Tablet styles */
+    .value-prop {
+        padding: 50px 20px;
+    }
+    
+    .stats-grid {
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 18px;
+    }
+    
+    .stat-icon {
+        font-size: 2.3rem;
+    }
+    
+    .value-prop h3 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Large mobile styles */
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    
+    .stat-icon {
+        font-size: 2.1rem;
+    }
+    
+    .value-prop h3 {
+        font-size: 1.6rem;
+    }
+    
+    .value-prop p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile styles */
+    .value-prop {
+        padding: 40px 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    .value-prop h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* For very small screens (optional) */
+@media (max-width: 320px) {
+    .value-prop {
+        padding: 30px 10px;
+    }
+    
+    .stat-icon {
+        font-size: 1.8rem;
+    }
+    
+    .value-prop h3 {
+        font-size: 1.4rem;
+    }
+    
+    .value-prop p {
+        font-size: 0.9rem;
+    }
+}
